@@ -1,14 +1,16 @@
 set :stage, :production
 set :rails_envl, :production
+server 'ec2-52-38-21-223.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}, primary: true
 
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-# server 'ec2-52-38-21-223.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}, primary: true
-#server 'example.com', user: 'ubuntu', roles: %w{app db web}, primary: true
+# server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
+# server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
+
 
 
 # role-based syntax
